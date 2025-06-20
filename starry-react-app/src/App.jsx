@@ -1,19 +1,12 @@
 import StarField from './components/StarField';
 import GlassCard from './components/GlassCard';
 import ProjectCard from './components/ProjectCard';
+import ImageGallery from './components/ImageGallery';
 
 function App() {
   const projects = [
-    {
-      title: 'Holy Bless',
-      description: 'A Thai-inspired spiritual platform',
-      image: 'https://via.placeholder.com/256x320',
-    },
-    {
-      title: 'Siam Blessing',
-      description: 'Cultural e-commerce for Thai heritage',
-      image: 'https://via.placeholder.com/256x320',
-    },
+    { title: 'Holy Bless', description: 'A Thai-inspired platform', image: 'https://via.placeholder.com/256x320' },
+    { title: 'Siam Blessing', description: 'Cultural e-commerce', image: 'https://via.placeholder.com/256x320' },
   ];
 
   return (
@@ -25,6 +18,7 @@ function App() {
           <ProjectCard key={i} {...project} />
         ))}
       </div>
+      <ImageGallery />
     </div>
   );
 }
