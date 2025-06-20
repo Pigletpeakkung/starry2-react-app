@@ -2,6 +2,8 @@ import StarField from './components/StarField';
 import GlassCard from './components/GlassCard';
 import ProjectCard from './components/ProjectCard';
 import ImageGallery from './components/ImageGallery';
+import TestimonialCarousel from './components/TestimonialCarousel';
+import ParallaxSection from './components/ParallaxSection';
 
 function App() {
   const projects = [
@@ -19,6 +21,8 @@ function App() {
         ))}
       </div>
       <ImageGallery />
+      <TestimonialCarousel />
+      <ParallaxSection />
     </div>
   );
 }
