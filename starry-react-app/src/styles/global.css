@@ -1,0 +1,96 @@
+/* src/styles/global.css */
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif; /* Modern font, supports Thai characters */
+}
+
+/* Custom Classes for 3D Flip Cards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Fallback CSS Animation for Starry Background (if not using Three.js) */
+.stars, .stars1, .stars2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: /* Add generated star positions here */;
+  animation: animStar linear infinite;
+}
+
+.stars {
+  width: 1px;
+  height: 1px;
+  animation-duration: 100s;
+}
+
+.stars1 {
+  width: 2px;
+  height: 2px;
+  animation-duration: 125s;
+}
+
+.stars2 {
+  width: 3px;
+  height: 3px;
+  animation-duration: 175s;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2560px) translateX(-2560px);
+  }
+}
+
+/* Shooting Stars (Fallback) */
+.shooting-stars {
+  position: absolute;
+  width: 5px;
+  height: 85px;
+  background: linear-gradient(to top, rgba(255,255,255,0), white);
+  animation: animShootingStar 10s linear infinite;
+}
+
+@keyframes animShootingStar {
+  from {
+    transform: translateY(0) translateX(0) rotate(-45deg);
+    height: 5px;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-2560px) translateX(-2560px) rotate(-45deg);
+    height: 800px;
+    opacity: 1;
+  }
+}
+
+/* Thai-Inspired Accent (Optional) */
+.thai-accent {
+  border: 2px solid #FFD700; /* Gold border for Thai heritage */
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 255, 255, 0.1));
+}
